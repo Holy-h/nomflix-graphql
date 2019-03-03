@@ -1,0 +1,25 @@
+type movie {
+  id: Int!
+  backdrop_path: String
+  belongs_to_collection: movieCollection
+  genres: [genres!]
+  homepage: String
+  original_title: String!
+  overview: String!
+}
+
+type movieCollection {
+  id: Int!
+  name: String!
+  poster_path: String!
+  backdrop_path: String!
+}
+
+type genres {
+  id: Int!
+  name: String!
+}
+
+type Query {
+  getmovie(id: Int!): movie!
+}

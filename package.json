@@ -5,5 +5,20 @@
   "main": "index.js",
   "repository": "https://github.com/Holy-h/nomflix-graphql.git",
   "author": "Bonggt <kepy1106@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "axios": "^0.18.0",
+    "graphql-yoga": "^1.17.4"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-stage-3": "^7.0.0"
+  }
 }
