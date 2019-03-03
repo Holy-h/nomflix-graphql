@@ -1,0 +1,9 @@
+{
+  "name": "nomflix-graphql",
+  "version": "1.0.0",
+  "description": "get movie data with graphql",
+  "main": "index.js",
+  "repository": "https://github.com/Holy-h/nomflix-graphql.git",
+  "author": "Bonggt <kepy1106@gmail.com>",
+  "license": "MIT"
+}
