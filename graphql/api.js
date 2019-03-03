@@ -8,7 +8,7 @@ const api = axios.create({
   },
 });
 
-export const getMovie = async (id) => {
+export const getDetail = async (id) => {
   const {
     data: movie
   } = await api.get(`movie/${id}`, {
@@ -16,6 +16,40 @@ export const getMovie = async (id) => {
       append_to_response: "videos",
     },
   })
-  console.log(movie);
   return movie;
+}
+
+export const getVideos = async (id) => {
+  const {
+    data: videos
+  } = await api.get(`movie/${id}/videos`);
+  return videos;
+}
+
+export const getNowplaying = async () => {
+  const {
+    data: {results : movies}
+  } = await api.get(`movie/now_playing`);
+  return movies;
+}
+
+export const getPopular = async () => {
+  const {
+    data: {results : movies}
+  } = await api.get(`movie/popular`);
+  return movies;
+}
+
+export const getToprated = async () => {
+  const {
+    data: {results : movies}
+  } = await api.get(`movie/top_rated`);
+  return movies;
+}
+
+export const getUpcomig = async () => {
+  const {
+    data: {results : movies}
+  } = await api.get(`movie/upcoming`);
+  return movies;
 }

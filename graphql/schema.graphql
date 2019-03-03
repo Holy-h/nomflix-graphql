@@ -1,12 +1,24 @@
+# 
+
 type movie {
   id: Int!
+  title: String!
+  genres: [genres!]
+  vote_average: Float!
+  poster_path: String!
   backdrop_path: String
   belongs_to_collection: movieCollection
-  genres: [genres!]
   homepage: String
-  original_title: String!
   overview: String!
+  release_date: String!
 }
+
+type movievideo {
+  id: Int!
+  results: [videos]
+}
+
+# 
 
 type movieCollection {
   id: Int!
@@ -20,6 +32,18 @@ type genres {
   name: String!
 }
 
+type videos {
+  id: String!
+  key: String!
+  name: String!
+  type: String!
+}
+
 type Query {
-  getmovie(id: Int!): movie!
+  getmoviedetail(id: Int!): movie!
+  getmovievideos(id: Int!): movievideo!
+  getmovienowplaying: [movie]!
+  getmoviepopular: [movie]!
+  getmovietoprated: [movie]!
+  getmovieupcoming: [movie]!
 }

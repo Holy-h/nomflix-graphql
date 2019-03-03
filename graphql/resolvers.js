@@ -1,9 +1,20 @@
-import { getMovie } from "./api";
+import {
+  getDetail,
+  getVideos,
+  getUpcomig,
+  getNowplaying,
+  getPopular,
+  getToprated } from "./api";
 
 
 const resolvers = {
   Query: {
-    getmovie: async (_, {id}) => getMovie(id),
+    getmoviedetail: (_, {id}) => getDetail(id),
+    getmovievideos: (_, {id}) => getVideos(id),
+    getmovienowplaying: getNowplaying,
+    getmoviepopular: getPopular,
+    getmovietoprated: getToprated,
+    getmovieupcoming: getUpcomig
   }
 }
 
