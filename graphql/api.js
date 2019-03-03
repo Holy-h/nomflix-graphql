@@ -10,46 +10,100 @@ const api = axios.create({
 
 export const getDetail = async (id) => {
   const {
-    data: movie
+    data
   } = await api.get(`movie/${id}`, {
     params: {
       append_to_response: "videos",
     },
   })
-  return movie;
+  return data;
 }
 
 export const getVideos = async (id) => {
   const {
-    data: videos
+    data: {
+      results
+    }
   } = await api.get(`movie/${id}/videos`);
-  return videos;
+  return results;
 }
 
 export const getNowplaying = async () => {
   const {
-    data: {results : movies}
+    data: {results}
   } = await api.get(`movie/now_playing`);
-  return movies;
+  return results;
 }
 
 export const getPopular = async () => {
   const {
-    data: {results : movies}
+    data: {results}
   } = await api.get(`movie/popular`);
-  return movies;
+  return results;
 }
 
 export const getToprated = async () => {
   const {
-    data: {results : movies}
+    data: {results}
   } = await api.get(`movie/top_rated`);
-  return movies;
+  return results;
 }
 
 export const getUpcomig = async () => {
   const {
-    data: {results : movies}
+    data: {results}
   } = await api.get(`movie/upcoming`);
-  return movies;
+  return results;
+}
+
+export const getTvDetail = async (id) => {
+  const {
+    data
+  } = await api.get(`tv/${id}`);
+  return data;
+}
+
+export const getTVVideos = async (id) => {
+  const {
+    data: {
+      results
+    }
+  } = await api.get(`tv/${id}/videos`);
+  return results;
+}
+
+export const getTVAiringToday = async () => {
+  const {
+    data: {
+      results
+    }
+  } = await api.get(`tv/airing_today`);
+  return results;
+}
+
+export const getTVOnTheAir = async () => {
+  const {
+    data: {
+      results
+    }
+  } = await api.get(`tv/on_the_air`);
+  return results;
+}
+
+export const getTVPopualr = async () => {
+  const {
+    data: {
+      results
+    }
+  } = await api.get(`tv/popular`);
+  return results;
+}
+
+export const getTVToprated = async () => {
+  const {
+    data: {
+      results
+    }
+  } = await api.get(`tv/top_rated`);
+  return results;
 }

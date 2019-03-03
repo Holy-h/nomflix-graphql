@@ -4,17 +4,29 @@ import {
   getUpcomig,
   getNowplaying,
   getPopular,
-  getToprated } from "./api";
+  getToprated, 
+  getTvDetail,
+  getTVVideos,
+  getTVOnTheAir,
+  getTVAiringToday,
+  getTVPopualr,
+  getTVToprated} from "./api";
 
 
 const resolvers = {
   Query: {
-    getmoviedetail: (_, {id}) => getDetail(id),
-    getmovievideos: (_, {id}) => getVideos(id),
-    getmovienowplaying: getNowplaying,
-    getmoviepopular: getPopular,
-    getmovietoprated: getToprated,
-    getmovieupcoming: getUpcomig
+    movie_detail: (_, {id}) => getDetail(id),
+    movie_videos: (_, {id}) => getVideos(id),
+    movie_nowplaying: getNowplaying,
+    movie_popular: getPopular,
+    movie_toprated: getToprated,
+    movie_upcoming: getUpcomig,
+    tv_detail: (_, {id}) => getTvDetail(id),
+    tv_videos: (_, {id}) => getTVVideos(id),
+    tv_airingtoday: getTVAiringToday,
+    tv_ontheair: getTVOnTheAir,
+    tv_popular: getTVPopualr,
+    tv_toprated: getTVToprated,
   }
 }
 

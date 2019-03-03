@@ -1,5 +1,4 @@
-# 
-
+# movie
 type movie {
   id: Int!
   title: String!
@@ -13,9 +12,11 @@ type movie {
   release_date: String!
 }
 
-type movievideo {
-  id: Int!
-  results: [videos]
+type videos {
+  id: String!
+  key: String!
+  name: String!
+  type: String!
 }
 
 # 
@@ -32,18 +33,40 @@ type genres {
   name: String!
 }
 
-type videos {
-  id: String!
-  key: String!
+# TV shows
+
+type tv {
+  id: Int!
   name: String!
-  type: String!
+  original_name: String!
+  vote_average: Float!
+  poster_path: String!
+  overview: String!
+  genres: [genres!]
+  seasons: [seasons]
+}
+
+type seasons {
+  air_date: String!
+  episode_count: Int!
+  id: Int!
+  name: String!
+  overview: String
+  poster_path: String
+  season_number: Int
 }
 
 type Query {
-  getmoviedetail(id: Int!): movie!
-  getmovievideos(id: Int!): movievideo!
-  getmovienowplaying: [movie]!
-  getmoviepopular: [movie]!
-  getmovietoprated: [movie]!
-  getmovieupcoming: [movie]!
+  movie_detail(id: Int!): movie!
+  movie_videos(id: Int!): [videos]!
+  movie_nowplaying: [movie]!
+  movie_popular: [movie]!
+  movie_toprated: [movie]!
+  movie_upcoming: [movie]!
+  tv_detail(id: Int!): tv!
+  tv_videos(id: Int!): [videos]!
+  tv_airingtoday: [tv]!
+  tv_ontheair: [tv]!
+  tv_popular: [tv]!
+  tv_toprated: [tv]!
 }
