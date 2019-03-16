@@ -19,7 +19,7 @@ type videos {
   type: String!
 }
 
-# 
+#
 
 type movieCollection {
   id: Int!
@@ -40,10 +40,11 @@ type tv {
   name: String!
   original_name: String!
   vote_average: Float!
-  poster_path: String!
+  poster_path: String
   overview: String!
   genres: [genres!]
   seasons: [seasons]
+  first_air_date: String
 }
 
 type seasons {
