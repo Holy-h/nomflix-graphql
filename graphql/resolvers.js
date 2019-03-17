@@ -1,26 +1,26 @@
 import {
-  getDetail,
-  getVideos,
-  getUpcomig,
-  getNowplaying,
-  getPopular,
-  getToprated,
   getTvDetail,
   getTVVideos,
   getTVOnTheAir,
   getTVAiringToday,
   getTVPopualr,
-  getTVToprated
+  getTVToprated,
+  getNowplayingMovie,
+  getPopularMovie,
+  getMovieDetail,
+  getMovieVideos,
+  getTopratedMovie,
+  getUpcomigMovie
 } from "../api";
 
 const resolvers = {
   Query: {
-    movie_detail: (_, { id }) => getDetail(id),
-    movie_videos: (_, { id }) => getVideos(id),
-    movie_nowplaying: getNowplaying,
-    movie_popular: getPopular,
-    movie_toprated: getToprated,
-    movie_upcoming: getUpcomig,
+    movie_detail: (_, { id }) => getMovieDetail(id),
+    movie_videos: (_, { id }) => getMovieVideos(id),
+    movie_nowplaying: getNowplayingMovie,
+    movie_popular: getPopularMovie,
+    movie_toprated: getTopratedMovie,
+    movie_upcoming: getUpcomigMovie,
     tv_detail: (_, { id }) => getTvDetail(id),
     tv_videos: (_, { id }) => getTVVideos(id),
     tv_airingtoday: getTVAiringToday,
