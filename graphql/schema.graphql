@@ -10,6 +10,8 @@ type movie {
   homepage: String
   overview: String!
   release_date: String!
+  runtime: Int
+  production_companies: [companies]
 }
 
 type videos {
@@ -33,6 +35,13 @@ type genres {
   name: String!
 }
 
+type companies {
+  name: String!
+  id: Int!
+  logo_path: String
+  origin_contry: String
+}
+
 # TV shows
 
 type tv {
@@ -41,10 +50,13 @@ type tv {
   original_name: String!
   vote_average: Float!
   poster_path: String
+  backdrop_path: String
   overview: String!
   genres: [genres!]
   seasons: [seasons]
   first_air_date: String
+  episode_run_time: [Int]
+  production_companies: [companies]
 }
 
 type seasons {
